@@ -21,6 +21,7 @@ class Usuario(DateTimeModel):
     contrasena = models.CharField(max_length=50, blank=False, null=False)
     estado = models.BooleanField(default=True)
     #jave foranea de programa 
+    id_programas = models.ForeignKey(Programa, on_delete=models.CASCADE, blank=False, null=False)
 
 class Programa(DateTimeModel):
     id_programa = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
