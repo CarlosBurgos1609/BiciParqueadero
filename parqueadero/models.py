@@ -11,8 +11,46 @@ class DateTimeModel(models.Model):
     class Meta:
         abstract = True
         
-class usuario(DateTimeModel):
-    id= models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+class Usuario(DateTimeModel):
+    id_usuario= models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    nombre = models.CharField(max_length=50, blank=False, null=False)
+    apellido = models.CharField(max_length=50, blank=False, null=False)
+    código = models.CharField(max_length=50, blank=False, null=False)
+    identificación = models.CharField(max_length=50, blank=False, null=False)
     email = models.EmailField(max_length=50, unique=True, blank=False, null=False)
-    password = models.CharField(max_length=50, blank=False, null=False)
-    status = models.BooleanField(default=True)
+    contrasena = models.CharField(max_length=50, blank=False, null=False)
+    estado = models.BooleanField(default=True)
+    #jave foranea de programa 
+
+class Programa(DateTimeModel):
+    id_programa = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    nombre = models.CharField(max_length=50, blank=False, null=False)
+    abrebiación = models.CharField(max_length=5, blank=False, null=False)
+    #id _facultad
+
+class Facultade(DateTimeModel):
+    id_facultad = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    nombre = models.CharField(max_length=50, blank=False, null=False)
+    abrebiación = models.CharField(max_length=5, blank=False, null=False)
+    estado = models.BooleanField(default=True)
+
+class Parkine(DateTimeModel):
+    id_parking = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
+    #id usuario
+    #id punto
+    
+class Estacione(DateTimeModel):
+    id_estación = models.AutoField(primary_key=True, unique= True, blank= False, null=False)
+    nombre = models.CharField(max_length=50, blank=False, null=False)
+    #id sede
+    
+class Punto(DateTimeModel):
+    id_punto = models.AutoField(primary_key=True, unique= True, blank= False, null=False)
+    #id_estacion
+    estado = models.BooleanField(default=True)
+    codigo_punto = models.AutoField(primary_key=True, unique= True, blank= False, null=False)
+    
+class Sede(DateTimeModel):
+    id_sede = models.AutoField(primary_key=True, unique= True, blank= False, null=False)
+    nombre = models.CharField(max_length=50, blank=False, null=False)
+    dirección = models.CharField(max_length= 50, blank=False, null=False)
