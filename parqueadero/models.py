@@ -12,19 +12,19 @@ class DateTimeModel(models.Model):
         
 class usuario(DateTimeModel):
     id_usuario= models.AutoField(primary_key=True, unique=True, blank=False, null=False)
-    nombre = models.CharField(max_length=50, blank=False, null=False)
-    apellido = models.CharField(max_length=50, blank=False, null=False)
-    código = models.CharField(max_length=50, blank=False, null=False)
-    identificación = models.CharField(max_length=50, blank=False, null=False)
-    email = models.EmailField(max_length=50, unique=True, blank=False, null=False)
-    password = models.CharField(max_length=50, blank=False, null=False)
+    nombre = models.CharField(max_length=150, blank=False, null=False)
+    apellido = models.CharField(max_length=150, blank=False, null=False)
+    código = models.CharField(max_length=11, blank=False, null=False)
+    identificación = models.CharField(max_length=12, blank=False, null=False)
+    email = models.EmailField(max_length=200, unique=True, blank=False, null=False)
+    password = models.CharField(max_length=250, blank=False, null=False)
     status = models.BooleanField(default=True)
     #jave foranea de programa 
     id_programas = models.ForeignKey('Programa', on_delete=models.CASCADE, blank=False, null=False)
     
     def save(self, *args, **kwargs):
         self.password = make_password(self.password)
-        super(usuario, self).save(*args, **kwargs)
+        super(usuario, self).save(*args , **kwargs)
         
 class Sede(DateTimeModel):
     id_sede = models.AutoField(primary_key=True, unique= True, blank= False, null=False)
