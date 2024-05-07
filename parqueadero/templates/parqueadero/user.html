@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>List clients</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: green;
+                color: white;
+            }
+        </style>
+    </head>
+    <body style="background-color: gray;">
+        <h1>listado de todos los clientes</h1>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuarios</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuario %}
+                <tr>
+                    <td>{{ usuario.nombre }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </body>
+</html>
