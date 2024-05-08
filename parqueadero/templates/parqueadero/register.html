@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regitro</title>
+    <title>Regsitro</title>
     <link rel="shortcut icon" href="../img/logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="../estilo/estilo.css">
 </head>
@@ -25,14 +25,14 @@
                     <input type="email" class="input_email" placeholder="Example@gmail.com" required><br><br>
                     <input type="password" placeholder="password" required><br><br>
                     <select name="Sede" class="select" required>
-                    <!-- {% for Sede in Sede %}
-                    <li>
-                    {{Sede.nombre}}
-                    </li>
-                    {%endfor%} -->
-                    </select><br><br>
                     
-                    <p>acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p>
+                    {% for sede in sedess %}
+                        <option value="{{ Sede.id }}">{{ Sede.nombre }}</option>
+                    {% endfor %}
+                    </select>
+                    <br>
+                    
+                    <p>Acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p>
                     <input type="submit" value="REGISTER" class="input-submit" required><br><br>
                     <!--target="_blank"-->
                 </center>
