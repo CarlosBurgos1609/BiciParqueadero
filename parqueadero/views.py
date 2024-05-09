@@ -19,4 +19,4 @@ def login(request):
 def register(request):
 # return HttpResponse ("Here you find a list of users")
     sedes = Sede.objects.all()
-    return render(request, 'parqueadero/register.html',{'sedess':sedes})
+    return render(request, 'parqueadero/register.html',{'sedes':sedes})

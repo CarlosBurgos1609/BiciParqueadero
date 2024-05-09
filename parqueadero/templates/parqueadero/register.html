@@ -1,34 +1,35 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regsitro</title>
+    <title>Registro</title>
     <link rel="shortcut icon" href="../img/logo1.png" type="image/x-icon">
-    <link rel="stylesheet" href="../estilo/estilo.css">
+    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 </head>
 
-<body >
+<body>
     <div >
         <form name="Register"  action="inbox.html"  method="post">
             <!-- <font color="#FFFFFF"> -->
                 <center>
                     <h1> 
                     <font>
-                        Register
+                        Registro
                     </font>
                     </h1>
-                    <input type="text" placeholder="primerNombre" required><br><br>
-                    <input type="text" placeholder="las name" required><br><br>
-                    <input type="email" class="input_email" placeholder="Example@gmail.com" required><br><br>
-                    <input type="password" placeholder="password" required><br><br>
+                    <input type="text" placeholder="Nombres" required><br><br>
+                    <input type="text" placeholder="Apellidos" required><br><br>
+                    <input type="email" class="input_email" placeholder="ejemplo@gmail.com" required><br><br>
+                    <input type="password" placeholder="***********" required><br><br>
                     <select name="Sede" class="select" required>
-                    
-                    {% for sede in sedess %}
-                        <option value="{{ Sede.id }}">{{ Sede.nombre }}</option>
-                    {% endfor %}
+                        <option value="" disabled selected>Seleccione la Sede   </option>
+                        {% for sede in sedes  %}
+                        <option value="{{ sede.id }}">{{ sede.nombre }}</option>
+                        {% endfor %}
                     </select>
                     <br>
                     
