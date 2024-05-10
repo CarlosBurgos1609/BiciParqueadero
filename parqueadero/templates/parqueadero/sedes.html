@@ -1,26 +1,29 @@
 {% load static %}
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar sesión</title>
-    <link rel="shortcut icon" href='{% static "img/logo1.png" %}" type="image/x-icon'>
-    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/home.css" %}'>
-
-</head>
-<body>
+    <link
+      rel="shortcut icon"
+      href='{% static "img/logo1.png" %}" type="image/x-icon'
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href='{% static "estilo/home.css" %}'
+    />
+  </head>
+  <body>
     <h1>Sedes</h1>
 
-    <div class="b-img">
-        <img src="centro.jpg" alt="Imagen 1">
-        <p>soy sede centro.</p>
-    </div>
+    <img class="b-img" src="{% static "img/centro.jpg" %}" alt= "Imagen 1"
+    width="250" height="250">
+    <p>Sede centro.</p>
 
-    <div class="b-img">
-        <img src="san_damian.jpg" alt="Imagen 2">
-        <p>soy sede san damian.</p>
-    </div>
-</body>
+    <img class= "b-img" src="{% static "img/san_damian.jpg" %}" alt="Imagen 2"
+    width="250" height="250">
+    <p>Soy sede san damian.</p>
+  </body>
 </html>

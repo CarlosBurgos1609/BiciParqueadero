@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
-    <link rel="shortcut icon" href='{% static "img/logo1.png" %}" type="image/x-icon'>
+    <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
     <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 
 </head>
@@ -21,6 +21,7 @@
     <center>
         <font>
             <form name="login_form" action="home" method="get">
+                <img type = "img" src = "{% static "img/logo1.png" %}" width= "70" height="100"><br><br>
                 <label> E-mail:</label><br>
                 <input type="Email" class="input_email" placeholder = "email@gmail.com" required><br>
                 <label>Password</label><br>

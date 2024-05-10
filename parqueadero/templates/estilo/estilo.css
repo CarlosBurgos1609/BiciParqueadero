@@ -164,3 +164,9 @@ input-submit:hover {
 font{
     color: #FFFFE4B5
 }
+img{
+    margin: 100px;
+    border: 4px rgb(238, 18, 18);
+    box-shadow: 4px 4px 4px gray;
+    border-radius: 40px 20px;
+}

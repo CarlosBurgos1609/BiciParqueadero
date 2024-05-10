@@ -1,9 +1,9 @@
 h1,h3,h2{
-    color:rgb(28, 32, 29);
+    color:white;
     text-align: center;
 }
 p{
-    color: black;
+    color: white;
     text-align: justify;
     font-size: larger;
 
@@ -62,4 +62,8 @@ nav a:hover{
 }
 body{
     background-color: rgb(33, 121, 171);
+}
+
+img{
+    margin: 70px;
 }
