@@ -25,7 +25,7 @@ p{
     /*grosor color estilo (solid,dotted,doble)*/
     border: 4px rgb(238, 18, 18);
     /*desp-x desp_y redondeo color*/
-    box-shadow: 4px 4px 4px gray;
+    box-shadow: 4px 4px 4px rgb(129, 144, 230);
     border-radius: 40px 20px;
     
 }
@@ -56,7 +56,7 @@ nav{
 }
 
 nav a:hover{
-    color: rgb(54, 68, 64);
+    color: rgb(160, 229, 210);
     background-color: rgb(98, 80, 235);
     border: 4px black dotted;
 }

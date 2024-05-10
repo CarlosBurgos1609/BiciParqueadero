@@ -1,5 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
+from django.contrib.auth import logout
+from django.shortcuts import redirect
 
 # Create your views here.
 from django.http import HttpResponse
@@ -17,21 +21,26 @@ def login(request):
     if request.method == "GET":
         return render(request, 'parqueadero/login.html')
     elif request.method == "POST":
-        # traer usuarios BD y comparar contraseña encriptada
-        # if la contraseña y correo son correctos, rendirijes al homne
-        # else renderisar el mismo formulario con error de correo o contraseña incorrecta
-        return render(request, 'parqueadero/login.html', )
+        email = request.POST['email']
+        password = request.POST['password']
+
+        usuario = authenticate(email=email, password=password)
+
+        if usuario is not None:
+            login(request, usuario)
+            return redirect('home')
+        else:
+            return render(request, 'parqueadero/login.html')
 
 def register(request):
     sedes = Sede.objects.all()
     return render(request, 'parqueadero/register.html',{'sedes':sedes})
 
 
-
+@login_required
 def home(request):
     # if estoy logeado me quedo
     # else redirecciono al loginS 
-    
     return render(request, 'parqueadero/index.html')
 
 def points(request):
