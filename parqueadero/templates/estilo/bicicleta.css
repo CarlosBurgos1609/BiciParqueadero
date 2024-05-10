@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background: #252525;
+  background: #ECE2C6;
 }
 
 .bicycle-container {
@@ -43,7 +43,7 @@ body {
   left: 0;
   width: inherit;
   height: inherit;
-  border-radius: 50%;
+  border-radius: 100%;
   border: 10px solid #151515;
   z-index: 2;
 }
@@ -56,8 +56,8 @@ body {
   left: 0;
   width: 114px;
   height: 114px;
-  border-radius: 50%;
-  border: 10px solid crimson;
+  border-radius: 100%;
+  border: 10px solid blue;
   z-index: 1;
 }
 .bicycle-container .wheel .spokes {
@@ -72,7 +72,7 @@ body {
   border-radius: 50%;
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  border-top: 3px solid crimson;
+  border-top: 3px solid blue;
   z-index: 1;
   animation: rt 2s infinite linear;
   background: rgba(200, 100, 100, 0.1);
@@ -80,7 +80,7 @@ body {
 .bicycle-container .wheel .spokes:nth-of-type(3) {
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
-  border-bottom: 3px solid crimson;
+  border-bottom: 3px solid blue;
 }
 .bicycle-container .wheel .hub {
   position: absolute;
@@ -92,7 +92,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: crimson;
+  background: blue;
 }
 .bicycle-container .back-wheel {
   left: 0;
@@ -123,7 +123,7 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 3px solid crimson;
+  border: 3px solid blue;
 }
 .bicycle-container .gear .pedal-tube {
   position: absolute;
@@ -144,7 +144,7 @@ body {
   left: 0;
   width: 20px;
   height: 5px;
-  background: crimson;
+  background: blue;
   border-radius: 5px;
   z-index: 3;
 }
@@ -178,7 +178,7 @@ body {
   left: calc((120px / 2) - 20px);
   transform-origin: right;
   transform: rotate(60deg);
-  background: crimson;
+  background: blue;
   z-index: 1;
   height: calc(5px - 1px);
   width: 140px;
@@ -194,7 +194,7 @@ body {
   bottom: initial;
   top: 25px;
   width: 20px;
-  background: crimson;
+  background: blue;
 }
 .bicycle-container .top-handlebar-tube2 {
   right: 90px;
@@ -221,7 +221,7 @@ body {
   transform-origin: right;
   transform: rotate(60deg);
   width: 140px;
-  background: crimson;
+  background: blue;
   z-index: 1;
   height: calc(5px - 1px);
 }
@@ -249,7 +249,7 @@ body {
   border-bottom-right-radius: 50%;
   border-top: 5px solid #151515;
   border-right: 5px solid #151515;
-  border-bottom: 5px solid crimson;
+  border-bottom: 5px solid blue;
   z-index: 2;
 }
 
@@ -268,7 +268,7 @@ body {
   position: absolute;
   margin: auto;
   animation: mv infinite linear;
-  background: crimson;
+  background: blue;
   z-index: -1;
 }
 .ground-container .ground1 {
