@@ -7,7 +7,7 @@ urlpatterns = [
     path("usuario",views.lista_usurio, name='usuario'),
     path("login",views.login, name='login'),
     path("register",views.register, name='register'),
-    path("inbox.html?",views.home, name='home'),
+    path("home",views.home, name='home'),
     # path("transacciones",views.lista_transacciones, name='transacciones')
     
 ]
