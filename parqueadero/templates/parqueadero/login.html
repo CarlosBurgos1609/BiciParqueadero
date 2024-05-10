@@ -12,14 +12,15 @@
 </head>
 
 <body>
-    <center>
-        <h1>
-            <font>Iniciar Sesión</font>
-        </h1>
-    </center><br><br>
+    
     &nbsp;&nbsp;
     <center>
         <font>
+            <center>
+                <h1>
+                    <font>Iniciar Sesión</font>
+                </h1>
+            </center><br><br>
             <form name="login_form" action="login" method="post">
                 {% csrf_token %}
                 <img type = "img" src = '{% static "img/logo1.png" %}' width= "90" height="120"><br><br>
