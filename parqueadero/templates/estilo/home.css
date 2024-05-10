@@ -1,0 +1,65 @@
+h1,h3,h2{
+    color:rgb(28, 32, 29);
+    text-align: center;
+}
+p{
+    color: black;
+    text-align: justify;
+    font-size: larger;
+
+}
+.b-imge2{
+    width: 250px;
+    float: left;
+    height: 250px;
+   margin-right: 20px;
+   margin-top: 15px;
+   border-radius: 100px 100px;
+}
+
+.b-img{
+    
+    margin: 40px;
+    width: 250px;
+    height: 250px;
+    /*grosor color estilo (solid,dotted,doble)*/
+    border: 4px rgb(238, 18, 18);
+    /*desp-x desp_y redondeo color*/
+    box-shadow: 4px 4px 4px gray;
+    border-radius: 40px 20px;
+    
+}
+
+hr{  height: 5px;   
+    background-color: rgb(29, 110, 187);
+        
+} 
+
+nav a {
+    width: 200px;
+    height: 40px;
+    background-color:rgb(107, 168, 208);
+    text-align: center;    
+    border: 2px;
+    color: rgb(25, 25, 31);
+    box-shadow: 2px 2px 2px rgb(122, 197, 179);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-decoration: rgb(182, 47, 47);
+    line-height: 50px;
+}
+
+nav{
+    background-color: #000080;
+    text-align: center;
+}
+
+nav a:hover{
+    color: rgb(54, 68, 64);
+    background-color: rgb(98, 80, 235);
+    border: 4px black dotted;
+}
+body{
+    background-color: rgb(33, 121, 171);
+}

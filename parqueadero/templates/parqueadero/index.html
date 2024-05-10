@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -8,6 +9,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href='{% static "estilo/bicicleta.css" %}' />
+    <link rel="stylesheet" href='{% static "estilo/home.css" %}' />
     <link
       rel="shortcut icon"
       href='{% static "img/logo1.png" %}'
@@ -15,6 +17,14 @@
     />
   </head>
   <body>
+    <h1>BiciParqueadero</h1>
+    <nav>
+        <a href="">Principal</a>&nbsp &nbsp
+        <a href="points">Puntos</a>&nbsp &nbsp        
+        <a href="headquarters">Sedes</a>&nbsp &nbsp
+        <a href="my_account">Mi cuenta</a>&nbsp &nbsp
+
+    </nav>
     <div class="bicycle-container">
       <div class="wheel back-wheel">
         <div class="tire"></div>

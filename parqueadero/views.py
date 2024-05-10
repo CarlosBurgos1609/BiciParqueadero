@@ -24,3 +24,13 @@ def register(request):
 def home(request):
     #return HttpResponse ("Here you find a list of users"
     return render(request, 'parqueadero/index.html')
+
+def points(request):
+    return render(request, 'parqueadero/puntos.html')
+
+def headquarters(request):
+    return render(request, 'parqueadero/sedes.html')
+
+def my_account(request):
+    return render(request, 'parqueadero/mi_cuenta.html')
+
