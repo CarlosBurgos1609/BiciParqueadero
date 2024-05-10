@@ -14,7 +14,11 @@ def lista_usurio(request):
 
 def login(request):
     #return HttpResponse ("Here you find a list of users"
-    return render(request, 'parqueadero/login.html')
+    if request.method == "GET":
+        return render(request, 'parqueadero/login.html')
+    elif request.method == "POST":
+        print("TEST")
+        return render(request, 'parqueadero/login.html')
 
 def register(request):
 # return HttpResponse ("Here you find a list of users")
