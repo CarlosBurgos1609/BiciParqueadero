@@ -25,7 +25,6 @@ def login(request):
         password = request.POST['password']
 
         usuario = authenticate(email=email, password=password)
-
         if usuario is not None:
             login(request, usuario)
             return redirect('home')
