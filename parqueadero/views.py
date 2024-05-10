@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth import logout
 
 # Create your views here.
 from django.http import HttpResponse
@@ -13,20 +14,24 @@ def lista_usurio(request):
     return render(request, 'parqueadero/user.html', {'usuario':usuarios})
 
 def login(request):
-    #return HttpResponse ("Here you find a list of users"
     if request.method == "GET":
         return render(request, 'parqueadero/login.html')
     elif request.method == "POST":
-        print("TEST")
-        return render(request, 'parqueadero/login.html')
+        # traer usuarios BD y comparar contraseña encriptada
+        # if la contraseña y correo son correctos, rendirijes al homne
+        # else renderisar el mismo formulario con error de correo o contraseña incorrecta
+        return render(request, 'parqueadero/login.html', )
 
 def register(request):
-# return HttpResponse ("Here you find a list of users")
     sedes = Sede.objects.all()
     return render(request, 'parqueadero/register.html',{'sedes':sedes})
 
+
+
 def home(request):
-    #return HttpResponse ("Here you find a list of users"
+    # if estoy logeado me quedo
+    # else redirecciono al loginS 
+    
     return render(request, 'parqueadero/index.html')
 
 def points(request):

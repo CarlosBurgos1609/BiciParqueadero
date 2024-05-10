@@ -30,7 +30,7 @@
                     <select name="Sede" class="select" required>
                         <option value="" disabled selected>Seleccione la Sede   </option>
                         {% for sede in sedes  %}
-                        <option value="{{ sede.id }}">{{ sede.nombre }}</option>
+                        <option value='{{ sede.id }}'>{{ sede.nombre }}</option>
                         {% endfor %}
                     </select>
                     <br>
