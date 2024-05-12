@@ -7,12 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="shortcut icon" href="{% static "img/logo1.png" %}" type="image/x-icon">
+    <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
     <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 </head>
 
 <body>
-    <h1> 
+    <p>Registro</p>
+    <form method="post"> 
+
+    {% csrf_token %}
+    {{form}}
+    <button> Registrarse</button>
+    </form>
+    
+    <!-- <h1> 
         <center>
         <font>
             Registro
@@ -21,8 +29,9 @@
         </h1>
     <div >
         <form name="Register"  action="home"  method="post">
-            <!-- <font color="#FFFFFF"> -->
+          
                 <center>
+                    {% csrf_token %}
                     <input type="text" placeholder="Nombres" required><br><br>
                     <input type="text" placeholder="Apellidos" required><br><br>
                     <input type="email" class="input_email" placeholder="ejemplo@gmail.com" required><br><br>
@@ -37,11 +46,11 @@
                     
                     <p>Acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p>
                     <input href = "home" type="submit" value="REGISTER" class="input-submit" required><br><br>
-                    <!--target="_blank"-->
+                   
                 </center>
             </font>
         </form>
     </div>
-</body>
+</body> -->
 
 </html>
