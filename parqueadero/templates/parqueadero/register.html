@@ -8,9 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
-    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
+    <link type='text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 </head>
 <body>
+<<<<<<< HEAD
+    <p>Registro</p>
+    <form method="post">
+
+        {% csrf_token %}
+        {{form}}
+        <button> Registrarse</button>
+        <p>Acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p>
+    </form>
+    {% if error_message %}
+    <div class="alert alert-danger" role="alert">
+        {{ error_message }}
+=======
     <center>
         
         <form method="post"> 
@@ -65,7 +78,10 @@
                 </center>
             </font>
         </form>
+>>>>>>> 265ea3a48b4132fbac3c2013cd8a9d87c9139dc4
     </div>
-</body> -->
+    {% endif %}
+
+
 
 </html>
