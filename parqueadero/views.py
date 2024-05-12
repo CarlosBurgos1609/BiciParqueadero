@@ -1,3 +1,4 @@
+from django.db import IntegrityError
 from django.shortcuts import render, redirect
 # from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -64,23 +65,26 @@ def register(request):
     form = usuariosForm()
     if request.method == "POST":
         form = usuariosForm(request.POST)
-        # print(request.POST)
         if form.is_valid():
-            user = usuario()
+            try:
+                user = usuario()
 
-            user.nombre = form.cleaned_data['nombre']
-            user.apellido = form.cleaned_data['apellido']
-            user.código = form.cleaned_data['codigo']
-            user.identificación = form.cleaned_data['identificacion']
-            user.identificación = form.cleaned_data['identificacion']
-            user.password = form.cleaned_data['password']
-            user.email = form.cleaned_data['email']
-            user.id_programas =  form.cleaned_data['id_programa']
-            user.save()
+                user.nombre = form.cleaned_data['nombre']
+                user.apellido = form.cleaned_data['apellido']
+                user.código = form.cleaned_data['codigo']
+                user.identificación = form.cleaned_data['identificacion']
+                user.password = form.cleaned_data['password']
+                user.email = form.cleaned_data['email']
+                user.id_programas = form.cleaned_data['id_programa']
+                user.save()
 
-            print("valido")
-        else:
-            print("invalido")
+                return redirect('home')
+
+            except IntegrityError:
+                # Manejar el error de integridad (correo electrónico duplicado)
+                error_message = "Ya existe un usuario registrado con este correo electrónico."
+                return render(request, 'parqueadero/register.html', {'form': form, 'error_message': error_message})
+
     return render(request, 'parqueadero/register.html', {'form': form})
     # usuario
     # sedes = Sede.objects.all()
@@ -89,9 +93,10 @@ def register(request):
 
 # @login_required
 def home(request):
+
     # if estoy logeado me quedo
     # else redirecciono al loginS
-    return render(request, 'parqueadero/index.html')
+    return render(request, 'parqueadero/home.html')
 
 
 def points(request):
@@ -104,3 +109,6 @@ def headquarters(request):
 
 def my_account(request):
     return render(request, 'parqueadero/mi_cuenta.html')
+def  base(request):
+    return render(request,'parqueadero\base.html')
+
