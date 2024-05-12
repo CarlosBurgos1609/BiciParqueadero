@@ -1,11 +1,43 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>hola</h1>
-</body>
+    <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
+    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo-retro.css" %}'>
+    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/about.css" %}'>
+    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/container.css" %}'>
+    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/col.css" %}'>
+   </head>
+  <body>
+    <div class="about">
+      <div class="container">
+        <div class="row d_flex">
+          <div class="col-md-5">
+            <div class="about_img">
+              <figure>
+                <img src='{% static "img/centro.jpg" %}' alt="#" />
+              </figure>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="titlepage">
+              <h2>About Our Shop</h2>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour, or randomised words which don't look even
+                slightly believable. If you are going to use a passage of Lorem
+                Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text.
+              </p>
+            </div>
+            <a class="read_more" href="#">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
