@@ -10,15 +10,30 @@
     <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
     <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 </head>
-
 <body>
-    <p>Registro</p>
-    <form method="post"> 
+    <center>
+        
+        <form method="post"> 
+            <h1>Registro</h1>
+            {% csrf_token %}
+            <label> Nombres:</label><br>
+            {{form.nombre}}<br>
+            <label> Apellido:</label><br>
+            {{form.apellido}}<br>
+            <label> Código:</label><br>
+            {{form.codigo}}<br>
+            <label> identificación:</label><br>
+            {{form.identificacion}}<br>
+            <label> Email:</label><br>
+            {{form.email}}<br>
+            <label> Contraseña:</label><br>
+            {{form.password}}<br><br>
+            <label> Programa:</label><br>
+            {{form.id_programa}}<br><br>
 
-    {% csrf_token %}
-    {{form}}
-    <button> Registrarse</button>
-    </form>
+            <input href ="home" type="submit" value="REGISTER" class="input-submit" required><br><br>
+        </form>
+    </center>
     
     <!-- <h1> 
         <center>
