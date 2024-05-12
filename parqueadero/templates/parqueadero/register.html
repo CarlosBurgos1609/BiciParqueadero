@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
+
 <html lang="es">
 
 <head>
@@ -11,24 +12,10 @@
     <link type='text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 </head>
 <body>
-<<<<<<< HEAD
-    <p>Registro</p>
-    <form method="post">
-
-        {% csrf_token %}
-        {{form}}
-        <button> Registrarse</button>
-        <p>Acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p>
-    </form>
-    {% if error_message %}
-    <div class="alert alert-danger" role="alert">
-        {{ error_message }}
-=======
+    {% csrf_token %}
     <center>
-        
         <form method="post"> 
-            <h1>Registro</h1>
-            {% csrf_token %}
+            <h1>Registro</h1>           
             <label> Nombres:</label><br>
             {{form.nombre}}<br>
             <label> Apellido:</label><br>
@@ -47,8 +34,9 @@
             <input href ="home" type="submit" value="REGISTER" class="input-submit" required><br><br>
         </form>
     </center>
-    
-    <!-- <h1> 
+</html>
+{% comment %}     
+<h1> 
         <center>
         <font>
             Registro
@@ -81,7 +69,5 @@
 >>>>>>> 265ea3a48b4132fbac3c2013cd8a9d87c9139dc4
     </div>
     {% endif %}
+ {% endcomment %}
 
-
-
-</html>
