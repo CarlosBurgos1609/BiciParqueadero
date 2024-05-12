@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
     <link type='text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
 </head>
-
 <body>
+<<<<<<< HEAD
     <p>Registro</p>
     <form method="post">
 
@@ -23,6 +23,62 @@
     {% if error_message %}
     <div class="alert alert-danger" role="alert">
         {{ error_message }}
+=======
+    <center>
+        
+        <form method="post"> 
+            <h1>Registro</h1>
+            {% csrf_token %}
+            <label> Nombres:</label><br>
+            {{form.nombre}}<br>
+            <label> Apellido:</label><br>
+            {{form.apellido}}<br>
+            <label> Código:</label><br>
+            {{form.codigo}}<br>
+            <label> identificación:</label><br>
+            {{form.identificacion}}<br>
+            <label> Email:</label><br>
+            {{form.email}}<br>
+            <label> Contraseña:</label><br>
+            {{form.password}}<br><br>
+            <label> Programa:</label><br>
+            {{form.id_programa}}<br><br>
+
+            <input href ="home" type="submit" value="REGISTER" class="input-submit" required><br><br>
+        </form>
+    </center>
+    
+    <!-- <h1> 
+        <center>
+        <font>
+            Registro
+        </font>
+        </cent>
+        </h1>
+    <div >
+        <form name="Register"  action="home"  method="post">
+          
+                <center>
+                    {% csrf_token %}
+                    <input type="text" placeholder="Nombres" required><br><br>
+                    <input type="text" placeholder="Apellidos" required><br><br>
+                    <input type="email" class="input_email" placeholder="ejemplo@gmail.com" required><br><br>
+                    <input type="password" placeholder="***********" required><br><br>
+                    <select name="Sede" class="select" required>
+                        <option value="" disabled selected>Seleccione la Sede   </option>
+                        {% for sede in sedes  %}
+                        <option value='{{ sede.id }}'>{{ sede.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+                    
+                    <p>Acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p>
+                    <input href = "home" type="submit" value="REGISTER" class="input-submit" required><br><br>
+                   
+                </center>
+            </font>
+        </form>
+>>>>>>> 265ea3a48b4132fbac3c2013cd8a9d87c9139dc4
     </div>
     {% endif %}
 
