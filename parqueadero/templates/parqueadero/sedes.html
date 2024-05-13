@@ -1,3 +1,4 @@
+{% extends 'parqueadero/base.html' %}
 {% load static %}
 <html lang="es">
   <head>
@@ -16,14 +17,17 @@
     />
   </head>
   <body>
+    {% block content %}  
     <h1>Sedes</h1>
 
-    <img class="b-img" src="{% static "img/centro.jpg" %}" alt= "Imagen 1"
+    <img class="b-img" src='{% static "img/centro.jpg" %}' alt= "Imagen 1"
     width="250" height="250">
     <p>Sede centro.</p>
 
-    <img class= "b-img" src="{% static "img/san_damian.jpg" %}" alt="Imagen 2"
+    <img class= "b-img" src='{% static "img/san_damian.jpg" %}' alt="Imagen 2"
     width="250" height="250">
-    <p>Soy sede san damian.</p>
+    <p>Soy sede san damian.</p>  
+    {% endblock %}
+    
   </body>
 </html>

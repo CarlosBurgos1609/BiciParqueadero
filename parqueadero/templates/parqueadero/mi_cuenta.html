@@ -1,3 +1,4 @@
+{% extends 'parqueadero/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,5 +8,8 @@
 </head>
 <body>
     <p>welcome my my_account</p>
+    {% block content %} 
+   {{usuario.apellido}}
+    {% endblock %}
 </body>
 </html>

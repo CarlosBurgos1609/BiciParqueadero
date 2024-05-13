@@ -1,14 +1,16 @@
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import User
 
 
 # Create your views here.
 from django.http import HttpResponse
 from .models import usuario
-from .models import Sede
-from .forms import usuariosForm
+
+from .forms import inicioForm, usuariosForm
 
 
 def index(request):
@@ -21,44 +23,30 @@ def lista_usurio(request):
     return render(request, 'parqueadero/user.html', {'usuario': usuarios})
 
 
-def login(request):
-    if request.method == "GET":
-        print('enviando formulario')
+def loguin(request):
+    form = inicioForm()
+    if request.method == "POST":
+        form = inicioForm(request.POST)
+        if form.is_valid():
+            try:
+                user = authenticate(
+                    request, username=form.cleaned_data['email'], password=form.cleaned_data['password'])
+                if user is None:
+                    print('hola loguin')
+                    error_message = "correo o contraseña incorrectos."
+                    return render(request, 'parqueadero/login.html', {'form': form, 'error_message': error_message})
 
-    else:
-        print(request.POST)
-        print('obteniendo datos')
+                login(request, user)
 
-    return render(request, 'parqueadero/login.html', {
-        'form': UserCreationForm
+                return redirect('home')
 
-    })
-    # else:
-    #     # if request.POST['password1'] == request.POST['password2']:
-    #     #     usuario = usuario.objects.create_user(username=request.POST['username'],
-    #     #                                         password=request.POST['password1'])
+            except IntegrityError:
+                print('lola')
+                error_message = "correo o contraseña incorrectos."
+                return render(request, 'parqueadero/login.html', {'form': form, 'error_message': error_message})
 
-    #     #     return HttpResponse('contraseña incorrecta')
-
-    #     print(request.POST)
-    #     print('obteniendo datos')
-
-    # elif request.method == "POST":
-    #    email = request.POST.get('email')
-    #    password = request.POST.get('password')
-    #
-    #    if email and password:
-    #        usuario = authenticate(email=email, password=password)
-    #        if usuario is not None:
-    #            login(request, usuario)
-    #
-    #            return redirect('home')
-    #        else:
-    #
-    #            return render(request, 'parqueadero/login.html', {'error_message': 'Correo electrónico o contraseña incorrectos.'})
-    #    else:
-    #
-    #        return render(request, 'parqueadero/login.html', {'error_message': 'Por favor, ingrese correo electrónico y contraseña.'})
+    return render(request, 'parqueadero/login.html', {'form': form})
+    
 
 
 def register(request):
@@ -66,17 +54,23 @@ def register(request):
     if request.method == "POST":
         form = usuariosForm(request.POST)
         if form.is_valid():
+            #form.cleaned_data['password']
             try:
-                user = usuario()
+                usuario_nuevo = usuario()
 
-                user.nombre = form.cleaned_data['nombre']
-                user.apellido = form.cleaned_data['apellido']
-                user.código = form.cleaned_data['codigo']
-                user.identificación = form.cleaned_data['identificacion']
-                user.password = form.cleaned_data['password']
-                user.email = form.cleaned_data['email']
-                user.id_programas = form.cleaned_data['id_programa']
+                usuario_nuevo.nombre = form.cleaned_data['nombre']
+                usuario_nuevo.apellido = form.cleaned_data['apellido']
+                usuario_nuevo.código = form.cleaned_data['codigo']
+                usuario_nuevo.identificación = form.cleaned_data['identificacion']
+                usuario_nuevo.password = form.cleaned_data['password']
+                usuario_nuevo.email = form.cleaned_data['email']
+                usuario_nuevo.id_programas = form.cleaned_data['id_programa']
+
+                usuario_nuevo.save()
+                user = User.objects.create_user(
+                    form.cleaned_data['email'], password=form.cleaned_data['password'])
                 user.save()
+                login(request, user)
 
                 return redirect('home')
 
@@ -90,13 +84,17 @@ def register(request):
     # sedes = Sede.objects.all()
     # return render(request, 'parqueadero/register.html', {'sedes': sedes})
 
+    # @login_required
 
-# @login_required
+
 def home(request):
+    # if not request.user.is_authenticated:
+    #     return redirect('login')
+    # else:
+    return render(request, 'parqueadero/home.html')
 
     # if estoy logeado me quedo
     # else redirecciono al loginS
-    return render(request, 'parqueadero/home.html')
 
 
 def points(request):
@@ -106,9 +104,18 @@ def points(request):
 def headquarters(request):
     return render(request, 'parqueadero/sedes.html')
 
+@login_required
+def my_account(request):    
+    user =usuario.objects.get(email__exact=request.user.username)
 
-def my_account(request):
-    return render(request, 'parqueadero/mi_cuenta.html')
-def  base(request):
-    return render(request,'parqueadero\base.html')
 
+    return render(request, 'parqueadero/mi_cuenta.html',{'usuario':user})
+
+
+def base(request):
+    return render(request, 'parqueadero\base.html')
+
+@login_required
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('home')

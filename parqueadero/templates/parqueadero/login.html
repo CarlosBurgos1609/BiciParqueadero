@@ -1,14 +1,25 @@
+{% extends 'parqueadero/base.html' %}
+
+
 {% load static %}
 
 
 <body>
+    {% block content %}   
     <h1>login</h1>
-    <form action="login" method="post" >
+    <form action="loguin" method="post" >
         {% csrf_token %}
         {{form.as_p}}
     <button>Ingresar</button>
     
-    </form>
+    </form> 
+    {% endblock %}
+    {% if error_message %}
+    <div class="alert alert-danger" role="alert">
+        {{ error_message }}
+    </div>
+    {% endif %}
+    
     
 </body>
 <!-- <html lang="es">

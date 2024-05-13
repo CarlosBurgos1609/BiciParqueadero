@@ -9,6 +9,9 @@ class usuariosForm(forms.Form):
     email = forms.CharField(label="email",max_length=200, required=True)
     password =forms.CharField(label="contraseña",max_length=250, required=True)
     id_programa = forms.ModelChoiceField(label="programa", queryset= Programa.objects.all()) 
-    
+
+class inicioForm(forms.Form):
+    email = forms.CharField(label="email",max_length=200, required=True)
+    password =forms.CharField(label="contraseña",max_length=250, required=True)
     
     
