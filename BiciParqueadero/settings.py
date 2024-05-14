@@ -57,7 +57,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'BiciParqueadero.urls'
 
-LOGIN_URL='login'
+LOGIN_URL='loguin'
 
 TEMPLATES = [
     {

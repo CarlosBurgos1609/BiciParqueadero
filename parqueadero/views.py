@@ -22,7 +22,7 @@ def lista_usurio(request):
     return render(request, 'parqueadero/user.html', {'usuario': usuarios})
 
 
-def login(request):
+def loguin(request):
     form = inicioForm()
     if request.method == "POST":
         form = inicioForm(request.POST)

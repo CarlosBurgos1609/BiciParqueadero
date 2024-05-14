@@ -7,7 +7,7 @@ urlpatterns = [
     
     #path('accounts/', include('django.contrib.parqueadero.urls')),
     path("usuario",views.lista_usurio, name='usuario'),
-    path("login",views.login, name='login'),
+    path("loguin",views.loguin, name='login'),
     path("register",views.register, name='register'),
     path("home",views.home, name='home'),
     path("points",views.points, name='points'),
