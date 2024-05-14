@@ -1,40 +1,11 @@
 {% extends 'parqueadero/base.html' %}
 {%load static%}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
-    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo-retro.css" %}'>
-    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/about.css" %}'>
-    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/container.css" %}'>
-    <link type = 'text/css' rel="stylesheet" href='{% static "estilo/col.css" %}'>
-   </head>
-  <body>
-    <div class="about">
-      <div class="container">
-        <div class="row d_flex">
-          <div class="col-md-5">
-            <div class="about_img">
-              <figure>
-                <img src='{% static "img/centro.jpg" %}' alt="#" />
-              </figure>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="titlepage">
-              <h2>Universidad Cesmag Centro </h2>
-              <p>
-                - Dirección:
-              </p>
-              
-            </div>
-            <a class="read_more" href="#">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+{% block content %}
+<tbody>
+  
+      <td>{{ Punto.estado }}</td>
+  
+</tbody>
+
+
+{% endblock %}

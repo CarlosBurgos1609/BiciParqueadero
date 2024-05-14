@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 from django.http import HttpResponse
-from .models import usuario
+from .models import usuario, Punto
 
 from .forms import inicioForm, usuariosForm
 
@@ -68,7 +68,7 @@ def register(request):
                 user = User.objects.create_user(
                     form.cleaned_data['email'], password=form.cleaned_data['password'])
                 user.save()
-                login(request, user)
+                login(request, user)               
 
                 return redirect('home')
 
@@ -89,7 +89,8 @@ def home(request):
 
 
 def points(request):
-    return render(request, 'parqueadero/puntos.html')
+    puntos = Punto.objects.all()
+    return render(request, 'parqueadero/puntos.html', {'Punto': puntos})
 
 
 def headquarters(request):
