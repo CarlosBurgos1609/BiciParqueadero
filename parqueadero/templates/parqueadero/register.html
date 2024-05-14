@@ -1,4 +1,6 @@
 
+{% extends 'parqueadero/base.html' %}
+{% block content %} 
 <!DOCTYPE html>
 {% load static %}
 
@@ -14,6 +16,8 @@
 </head>
 
 <body>
+    
+
 
     <center>
         {% csrf_token %}
@@ -49,3 +53,6 @@
 
 
 </html>
+</body>
+
+{% endblock %}

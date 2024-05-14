@@ -53,7 +53,9 @@ class Programa(DateTimeModel):
     nombre = models.CharField(max_length=50, blank=False, null=False)
     abrebiación = models.CharField(max_length=5, blank=False, null=False)
     id_facultad = models.ForeignKey(Facultade, on_delete=models.CASCADE, blank=False, null=False)
-    
+
+    def __str__(self):
+        return self.nombre
 
 class Parkine(DateTimeModel):
     id_parking = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
