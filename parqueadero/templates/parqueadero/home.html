@@ -1,38 +1,76 @@
 {% extends 'parqueadero/base.html' %}
-{% block content %}
-<h1>home</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed enim et eligendi. Porro illum dicta perferendis expedita natus, ad voluptatibus. Asperiores quas laudantium incidunt nihil amet. Fuga asperiores est nemo.</p>
-{% endblock %}
 
 {% load static %}
+{% block content %}
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>BiciParqueadero</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href='{% static "estilo/bicicleta.css" %}' />
+  <link rel="stylesheet" href='{% static "estilo/home.css" %}' />
+  <link
+    rel="shortcut icon"
+    href='{% static "img/logo1.png" %}'
+    type="image/x-icon"
+  />
+</head>
+
+
+<body>
+  <h1>BiciParqueadero</h1>
+  
+  <div class="bicycle-container">
+    <div class="wheel back-wheel">
+      <div class="tire"></div>
+      <div class="rim"></div>
+      <div class="spokes"></div>
+      <div class="spokes"></div>
+      <div class="hub"></div>
+    </div>
+    <div class="wheel front-wheel">
+      <div class="tire"></div>
+      <div class="rim"></div>
+      <div class="spokes"></div>
+      <div class="spokes"></div>
+      <div class="hub"></div>
+    </div>
+    <div class="gear">
+      <div class="gear-red"></div>
+      <div class="tube pedal-tube"></div>
+      <div class="pedal"></div>
+    </div>
+    <div class="tube chain-tube"></div>
+    <div class="tube seat-tube-back"></div>
+    <div class="tube seat-tube-front"></div>
+    <div class="tube seat-tube-post"></div>
+    <div class="tube top-tube"></div>
+    <div class="tube top-handlebar-tube"></div>
+    <div class="tube top-handlebar-tube2"></div>
+    <div class="tube down-tube"></div>
+    <div class="tube head-tube"></div>
+    <div class="tube head-tube-post"></div>
+    <div class="saddle"></div>
+    <div class="handlebars"></div>
+  </div>
+  <div class="ground-container">
+    <div class="ground ground1"></div>
+    <div class="ground ground2"></div>
+    <div class="ground ground3"></div>
+  </div>
+</body>
+{% endblock %}
+
+
 
 
 <!-- <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>BiciParqueadero</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href='{% static "estilo/bicicleta.css" %}' />
-    <link rel="stylesheet" href='{% static "estilo/home.css" %}' />
-    <link
-      rel="shortcut icon"
-      href='{% static "img/logo1.png" %}'
-      type="image/x-icon"
-    />
-  </head>
+  
   <body>
     <h1>BiciParqueadero</h1>
-    <nav>
-      
-        <a href="">Principal</a> &nbsp &nbsp
-        <a href="points">Puntos</a>&nbsp &nbsp        
-        <a href="headquarters">Sedes</a>&nbsp &nbsp
-        <a href="my_account">Mi cuenta</a>&nbsp &nbsp
-
-    </nav>
+    
     <div class="bicycle-container">
       <div class="wheel back-wheel">
         <div class="tire"></div>

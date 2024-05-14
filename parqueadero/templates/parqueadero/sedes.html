@@ -1,12 +1,13 @@
-<<<<<<< HEAD
+
 {% extends 'parqueadero/base.html' %}
 {% load static %}
 <html lang="es">
-=======
+
 {%load static%}
+{% block content %}  
 <!DOCTYPE html>
 <html lang="en">
->>>>>>> db3ab43daa6be98a671827e53eb9aad179275ea8
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,20 +19,16 @@
     <link type = 'text/css' rel="stylesheet" href='{% static "estilo/col.css" %}'>
    </head>
   <body>
-<<<<<<< HEAD
-    {% block content %}  
-    <h1>Sedes</h1>
 
-    <img class="b-img" src='{% static "img/centro.jpg" %}' alt= "Imagen 1"
-    width="250" height="250">
-    <p>Sede centro.</p>
-
-    <img class= "b-img" src='{% static "img/san_damian.jpg" %}' alt="Imagen 2"
-    width="250" height="250">
-    <p>Soy sede san damian.</p>  
-    {% endblock %}
+    <center>
+      <h1>Sedes</h1>
+    </center>
     
-=======
+
+  
+    
+    
+
     <div class="about">
       <div class="container">
         <div class="row d_flex">
@@ -77,6 +74,7 @@
          </div>
       </div>
    </div>
->>>>>>> db3ab43daa6be98a671827e53eb9aad179275ea8
+
   </body>
+  {% endblock %}
 </html>

@@ -1,7 +1,6 @@
 from django.db import IntegrityError
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 
@@ -46,7 +45,6 @@ def loguin(request):
                 return render(request, 'parqueadero/login.html', {'form': form, 'error_message': error_message})
 
     return render(request, 'parqueadero/login.html', {'form': form})
-    
 
 
 def register(request):
@@ -54,7 +52,7 @@ def register(request):
     if request.method == "POST":
         form = usuariosForm(request.POST)
         if form.is_valid():
-            #form.cleaned_data['password']
+            # form.cleaned_data['password']
             try:
                 usuario_nuevo = usuario()
 
@@ -75,22 +73,15 @@ def register(request):
                 return redirect('home')
 
             except IntegrityError:
-                # Manejar el error de integridad (correo electrónico duplicado)
+
                 error_message = "Ya existe un usuario registrado con este correo electrónico."
                 return render(request, 'parqueadero/register.html', {'form': form, 'error_message': error_message})
 
     return render(request, 'parqueadero/register.html', {'form': form})
-    # usuario
-    # sedes = Sede.objects.all()
-    # return render(request, 'parqueadero/register.html', {'sedes': sedes})
-
-    # @login_required
 
 
 def home(request):
-    # if not request.user.is_authenticated:
-    #     return redirect('login')
-    # else:
+
     return render(request, 'parqueadero/home.html')
 
     # if estoy logeado me quedo
@@ -104,16 +95,17 @@ def points(request):
 def headquarters(request):
     return render(request, 'parqueadero/sedes.html')
 
+
 @login_required
-def my_account(request):    
-    user =usuario.objects.get(email__exact=request.user.username)
+def my_account(request):
+    user = usuario.objects.get(email__exact=request.user.username)
 
-
-    return render(request, 'parqueadero/mi_cuenta.html',{'usuario':user})
+    return render(request, 'parqueadero/mi_cuenta.html', {'usuario': user})
 
 
 def base(request):
     return render(request, 'parqueadero\base.html')
+
 
 @login_required
 def cerrar_sesion(request):

@@ -9,7 +9,11 @@
 <body>
     <p>welcome my my_account</p>
     {% block content %} 
-   {{usuario.apellido}}
+    <h2>Información del Usuario</h2>
+    <p>Apellido: {{ usuario.apellido }}</p>
+    <p>Nombre: {{ usuario.nombre }}</p>
+    <p>Email: {{ usuario.email }}</p>
+    <p>Código: {{ usuario.código }}</p>
     {% endblock %}
 </body>
 </html>

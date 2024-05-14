@@ -5,7 +5,16 @@
 
 
 <body>
-    {% block content %}   
+    {% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar sesión</title>
+        <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
+        <link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
+    
+    </head>   
     <h1>login</h1>
     <form action="loguin" method="post" >
         {% csrf_token %}
