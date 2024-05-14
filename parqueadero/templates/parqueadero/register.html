@@ -44,11 +44,32 @@
     
     </form>
 </center>
-    {% if error_message %}
-    <div class="alert alert-danger" role="alert">
-        {{ error_message }}
-    </div>
-    {% endif %}
+{% if error_message %}
+<script>
+    // Ejemplo de uso de SweetAlert2
+    Swal.fire({
+        title: '¡Error!',
+        html: '<strong>{{ error_message }}</strong>',
+        icon: 'error',
+        confirmButtonText: 'Aceptar'
+    });
+</script>
+{% elif mensaje_aceptar %}
+<script>
+    // Ejemplo de uso de SweetAlert2
+    Swal.fire({
+        title: 'si!',
+        html:'<strong>{{ mensaje_aceptar }}</strong>',
+        icon: 'success',
+        confirmButtonText: 'Aceptar'
+    }).then((result) => {
+            // Redirigir al usuario al home después de hacer clic en Aceptar
+            if (result.isConfirmed) {
+                window.location.href = "{% url 'home' %}";
+            }
+        });
+</script>
+{% endif %}
 
 
 

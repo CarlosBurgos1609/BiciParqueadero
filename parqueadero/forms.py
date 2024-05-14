@@ -7,11 +7,11 @@ class usuariosForm(forms.Form):
     codigo = forms.CharField(label="codigo",max_length=11, required=True)
     identificacion = forms.CharField(label="identificacion",max_length=11, required=True)
     email = forms.CharField(label="email",max_length=200, required=True)
-    password =forms.CharField(label="contraseña",max_length=250, required=True)
+    password =forms.CharField(label="contraseña",max_length=250, required=True, widget=forms.PasswordInput)
     id_programa = forms.ModelChoiceField(label="programa", queryset= Programa.objects.all(), empty_label='Seleccione el programa') 
 
 class inicioForm(forms.Form):
     email = forms.CharField(label="email",max_length=200, required=True)
-    password =forms.CharField(label="contraseña",max_length=250, required=True)
+    password =forms.CharField(label="contraseña",max_length=250, required=True,widget=forms.PasswordInput)
     
     

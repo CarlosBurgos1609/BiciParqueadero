@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 {% extends 'parqueadero/base.html' %}
 {% load static %}
-=======
-{% extends 'parqueadero/base.html' %} {% load static %}
 
->>>>>>> acf8a45287ba0712703a4e25e6039ea568d81cb9
+
+
 <body>
   {% block content %}
 
@@ -13,16 +11,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar sesión</title>
-    <link
-      rel="shortcut icon"
-      href='{% static "img/logo1.png" %}'
-      type="image/x-icon"
-    />
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href='{% static "estilo/estilo.css" %}'
-    />
+    <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon" />
+    <link type="text/css" rel="stylesheet" href='{% static "estilo/estilo.css" %}' />
   </head>
   <center>
     <div>
@@ -34,33 +24,32 @@
     </div>
   </center>
 </body>
-{% if error_message %}
-<<<<<<< HEAD
-    <script>
-        // Ejemplo de uso de SweetAlert2
-        Swal.fire({
-            title: '¡Error!',
-            html: '<strong>{{ error_message }}</strong>',
-            icon: 'error',
-            confirmButtonText: 'Aceptar'
-        });
-    </script>
+{% if error_messages %}
+<script>
+  // Ejemplo de uso de SweetAlert2
+  Swal.fire({
+    title: '¡Error!',
+    html: '<strong>{{ error_messages }}</strong>',
+    icon: 'error',
+    confirmButtonText: 'Aceptar'
+
+  });
+  const registroForm = document.getElementById('registro-form');
+
+  // Agregar un evento de envío al formulario
+  registroForm.addEventListener('submit', function (event) {
+    // Limpiar los valores de los campos después de enviar el formulario
+    registroForm.reset();
+  });
+</script>
 
 {% endif %}
 
 {% endblock %}
-=======
-<script>
-  // Ejemplo de uso de SweetAlert2
-  Swal.fire({
-    title: "¡Error!",
-    html: "<strong>{{ error_message }}</strong>",
-    icon: "error",
-    confirmButtonText: "Aceptar",
-  });
-</script>
-{% endif %} {% endblock %}
->>>>>>> acf8a45287ba0712703a4e25e6039ea568d81cb9
+
+
+
+
 <!-- <html lang="es">
 
 <head>

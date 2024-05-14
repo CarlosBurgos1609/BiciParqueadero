@@ -32,8 +32,10 @@ def loguin(request):
                     request, username=form.cleaned_data['email'], password=form.cleaned_data['password'])
                 if user is None:
                     print('hola login')
-                    error_message = "correo o contraseña incorrectos."
-                    return render(request, 'parqueadero/login.html', {'form': form, 'error_message': error_message})
+                    
+                    error_messages = "correo o contraseña incorrectos."
+                    
+                    return render(request, 'parqueadero/login.html', {'form': form, 'error_messages': error_messages})
 
                 login(request, user)
 
@@ -41,8 +43,8 @@ def loguin(request):
 
             except IntegrityError:
                 print('lola')
-                error_message = "correo o contraseña incorrectos."
-                return render(request, 'parqueadero/login.html', {'form': form, 'error_message': error_message})
+                # error_message = "correo o contraseña incorrectos."
+                # return render(request, 'parqueadero/home.html', {'form': form, 'error_message': error_message})
 
     return render(request, 'parqueadero/login.html', {'form': form})
 
@@ -68,9 +70,14 @@ def register(request):
                 user = User.objects.create_user(
                     form.cleaned_data['email'], password=form.cleaned_data['password'])
                 user.save()
-                login(request, user)               
+                login(request, user)
+                
+                mensaje_aceptar = "Registrado Exitosamente."
+                return render(request, 'parqueadero/home.html', {'form': form, 'mensaje_aceptar': mensaje_aceptar})
 
-                return redirect('home')
+
+                #return redirect('home')
+
 
             except IntegrityError:
 
@@ -90,7 +97,7 @@ def home(request):
 
 def points(request):
     puntos = Punto.objects.all()
-    return render(request, 'parqueadero/puntos.html', {'Punto': puntos})
+    return render(request, 'parqueadero/puntos.html', {'punto': puntos})
 
 
 def headquarters(request):
