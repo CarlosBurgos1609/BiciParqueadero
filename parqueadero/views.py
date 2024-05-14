@@ -31,7 +31,7 @@ def loguin(request):
                 user = authenticate(
                     request, username=form.cleaned_data['email'], password=form.cleaned_data['password'])
                 if user is None:
-                    print('hola loguin')
+                    print('hola login')
                     error_message = "correo o contraseña incorrectos."
                     return render(request, 'parqueadero/login.html', {'form': form, 'error_message': error_message})
 

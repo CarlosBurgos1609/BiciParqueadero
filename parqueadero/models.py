@@ -45,13 +45,13 @@ class Punto(DateTimeModel):
 class Facultade(DateTimeModel):
     id_facultad = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
     nombre = models.CharField(max_length=50, blank=False, null=False)
-    abrebiación = models.CharField(max_length=5, blank=False, null=False)
+    abrebiación = models.CharField(max_length=10, blank=False, null=False)
     estado = models.BooleanField(default=True)
 
 class Programa(DateTimeModel):
     id_programa = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
-    nombre = models.CharField(max_length=50, blank=False, null=False)
-    abrebiación = models.CharField(max_length=5, blank=False, null=False)
+    nombre = models.CharField(max_length=200, blank=False, null=False)
+    abrebiación = models.CharField(max_length=10, blank=False, null=False)
     id_facultad = models.ForeignKey(Facultade, on_delete=models.CASCADE, blank=False, null=False)
 
     def __str__(self):

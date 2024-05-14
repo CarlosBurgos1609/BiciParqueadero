@@ -1,37 +1,41 @@
+<<<<<<< HEAD
 {% extends 'parqueadero/base.html' %}
 {% load static %}
+=======
+{% extends 'parqueadero/base.html' %} {% load static %}
+
+>>>>>>> acf8a45287ba0712703a4e25e6039ea568d81cb9
 <body>
-    {% block content %}
+  {% block content %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Iniciar sesión</title>
-        <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon">
-        <link type='text/css' rel="stylesheet" href='{% static "estilo/estilo.css" %}'>
-
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión</title>
+    <link
+      rel="shortcut icon"
+      href='{% static "img/logo1.png" %}'
+      type="image/x-icon"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href='{% static "estilo/estilo.css" %}'
+    />
+  </head>
+  <center>
     <div>
-        <form action="loguin" method="post">
-            <h1>login</h1>
-            {% csrf_token %}
-            {{form.as_p}}
-            <button>Ingresar</button>
-
-        </form>
-
-    
-
-
-
-    
-
-
-
+      <form action="loguin" method="post">
+        <h1>Iniciar sesión</h1>
+        {% csrf_token %} {{form.as_p}}
+        <button>Ingresar</button>
+      </form>
+    </div>
+  </center>
 </body>
-</div>
 {% if error_message %}
+<<<<<<< HEAD
     <script>
         // Ejemplo de uso de SweetAlert2
         Swal.fire({
@@ -45,6 +49,18 @@
 {% endif %}
 
 {% endblock %}
+=======
+<script>
+  // Ejemplo de uso de SweetAlert2
+  Swal.fire({
+    title: "¡Error!",
+    html: "<strong>{{ error_message }}</strong>",
+    icon: "error",
+    confirmButtonText: "Aceptar",
+  });
+</script>
+{% endif %} {% endblock %}
+>>>>>>> acf8a45287ba0712703a4e25e6039ea568d81cb9
 <!-- <html lang="es">
 
 <head>
