@@ -1,11 +1,18 @@
-{% extends 'parqueadero/base.html' %}
+{% extends 'parqueadero/menu.html' %}
 {%load static%}
-{% block content %}
-<tbody>
+<head>
+<title>Puntos</title>
+<link type = 'text/css' rel="stylesheet" href='{% static "estilo/boostrap.css" %}'>
+<link type = 'text/css' rel="stylesheet" href='{% static "estilo/col.css" %}'>
+<link type = 'text/css' rel="stylesheet" href='{% static "estilo/container.css" %}'>
+<link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo-retro.css" %}'>
+<link type = 'text/css' rel="stylesheet" href='{% static "estilo/about  .css" %}'>
+</head>
+{% comment %} {% block content %} {% endcomment %}    
+<body>
   
       <td>{{ punto }}</td>
-  
-</tbody>
+</body>
 
 
-{% endblock %}
+{% comment %} {% endblock %} {% endcomment %}
