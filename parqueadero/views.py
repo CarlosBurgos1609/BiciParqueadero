@@ -70,13 +70,8 @@ def register(request):
                 user = User.objects.create_user(
                     form.cleaned_data['email'], password=form.cleaned_data['password'])
                 user.save()
-                login(request, user)
-                
-                mensaje_aceptar = "Registrado Exitosamente."
-                return render(request, 'parqueadero/home.html', {'form': form, 'mensaje_aceptar': mensaje_aceptar})
-
-
-                #return redirect('home')
+                login(request, user) 
+                return redirect('home')
 
 
             except IntegrityError:
@@ -113,6 +108,8 @@ def my_account(request):
 
 def base(request):
     return render(request, 'parqueadero\base.html')
+
+
 
 
 @login_required

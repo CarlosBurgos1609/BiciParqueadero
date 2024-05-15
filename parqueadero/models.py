@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.hashers import make_password
+
 # Create your models here.
 
 class DateTimeModel(models.Model):
@@ -14,7 +15,7 @@ class usuario(DateTimeModel):
     id_usuario= models.AutoField(primary_key=True, unique=True, blank=False, null=False)
     nombre = models.CharField(max_length=150, blank=False, null=False)
     apellido = models.CharField(max_length=150, blank=False, null=False)
-    código = models.CharField(max_length=11, blank=False, null=False)
+    código = models.CharField(max_length=11,  blank=False, null=False)
     identificación = models.CharField(max_length=12, blank=False, null=False)
     email = models.EmailField(max_length=200, unique=True, blank=False, null=False)
     password = models.CharField(max_length=250, blank=False, null=False)

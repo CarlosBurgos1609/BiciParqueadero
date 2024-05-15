@@ -39,14 +39,12 @@
         {{form.password}}<br><br>
         <label> Programa:</label><br>
         {{form.id_programa}}<br><br>
-        <!-- <p>Acepata los terminos y condiciones?&nbsp;&nbsp;<input type="radio" required></p> -->
         <button> Registrarse</button>
     
     </form>
 </center>
 {% if error_message %}
 <script>
-    // Ejemplo de uso de SweetAlert2
     Swal.fire({
         title: '¡Error!',
         html: '<strong>{{ error_message }}</strong>',
@@ -54,21 +52,7 @@
         confirmButtonText: 'Aceptar'
     });
 </script>
-{% elif mensaje_aceptar %}
-<script>
-    // Ejemplo de uso de SweetAlert2
-    Swal.fire({
-        title: 'si!',
-        html:'<strong>{{ mensaje_aceptar }}</strong>',
-        icon: 'success',
-        confirmButtonText: 'Aceptar'
-    }).then((result) => {
-            // Redirigir al usuario al home después de hacer clic en Aceptar
-            if (result.isConfirmed) {
-                window.location.href = "{% url 'home' %}";
-            }
-        });
-</script>
+
 {% endif %}
 
 
