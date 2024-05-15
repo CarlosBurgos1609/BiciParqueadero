@@ -1,19 +1,22 @@
-{% extends 'parqueadero/base.html' %}
+{% extends 'parqueadero/menu.html' %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <p>welcome my my_account</p>
-    {% block content %} 
-    <h2>Información del Usuario</h2>
-    <p>Apellido: {{ usuario.apellido }}</p>
-    <p>Nombre: {{ usuario.nombre }}</p>
-    <p>Email: {{ usuario.email }}</p>
-    <p>Código: {{ usuario.código }}</p>
-    {% endblock %}
-</body>
+  </head>
+  {% block content %}
+  <body>
+    <center>
+      <h1>Bienvenido a my cuenta</h1>
+      
+      <h2>Información del Usuario</h2>
+      <p>Apellido: {{ usuario.apellido }}</p>
+      <p>Nombre: {{ usuario.nombre }}</p>
+      <p>Email: {{ usuario.email }}</p>
+      <p>Código: {{ usuario.código }}</p>
+    </center>
+  </body>
+  {% endblock %}
 </html>
