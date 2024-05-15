@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 # Create your views here.
 from django.http import HttpResponse
-from .models import usuario, Punto
+from .models import Estacione, usuario, Punto
 
 from .forms import inicioForm, usuariosForm
 
@@ -102,7 +102,8 @@ def season_cen(request):
     return render(request, 'parqueadero/estaciones/estacion_cen.html')
 
 def season_dam(request):
-    return render(request, 'parqueadero/estaciones/estacion_Dam.html')
+    estacion= Estacione.objects.all()
+    return render(request, 'parqueadero/estaciones/estacion_Dam.html',{'estaciones':estacion})
 
 
 @login_required
