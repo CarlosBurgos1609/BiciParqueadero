@@ -14,6 +14,8 @@ urlpatterns = [
     path("headquarters",views.headquarters, name='headquarters'),
     path("my_account",views.my_account, name='my_account'),
     path("cerrar-sesion",views.cerrar_sesion, name='cerrar-sesion'),
+    path("estacion-centro",views.season_cen, name='estacion_centro'),
+    path("estacion-damian",views.season_dam, name='estacion_damian'),
     
     #path("base", views.base, name='base')
 

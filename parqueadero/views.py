@@ -98,6 +98,12 @@ def points(request):
 def headquarters(request):
     return render(request, 'parqueadero/sedes.html')
 
+def season_cen(request):
+    return render(request, 'parqueadero/estaciones/estacion_cen.html')
+
+def season_dam(request):
+    return render(request, 'parqueadero/estaciones/estacion_Dam.html')
+
 
 @login_required
 def my_account(request):
