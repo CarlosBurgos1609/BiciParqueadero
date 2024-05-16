@@ -43,6 +43,10 @@ class Punto(DateTimeModel):
     estado = models.BooleanField(default=True)
     codigo_punto = models.CharField(max_length=50, blank=False, null=False)
 
+    def __str__(self):
+        return self.codigo_punto
+
+
 class Facultade(DateTimeModel):
     id_facultad = models.AutoField(primary_key=True, unique=True, blank=False, null=False)
     nombre = models.CharField(max_length=50, blank=False, null=False)
