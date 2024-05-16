@@ -8,6 +8,13 @@ from .models import Programa
 # )
 
 class usuariosForm(forms.Form):
+
+    nombre = forms.CharField(label="Nombre",max_length=150,widget=forms.TextInput(attrs={'placeholder': 'Carlos Andres'}), required=True)
+    apellido = forms.CharField(label="apellido",max_length=150,widget=forms.TextInput(attrs={'placeholder': 'Burgos Aristizabal'}), required=True)
+    codigo = forms.CharField(label="codigo",max_length=11,widget=forms.TextInput(attrs={'placeholder': 'maximo 11 digitos'}), required=True)
+    identificacion = forms.CharField(label="identificacion",max_length=11,widget=forms.TextInput(attrs={'placeholder': 'CC,TI'}), required=True)
+    email = forms.EmailField(label="email",max_length=200,widget=forms.TextInput(attrs={'placeholder': 'Ejemplo:carlos@gmailcom'}), required=True)
+
     nombre = forms.CharField(label="Nombre",max_length=150, required=True)
     apellido = forms.CharField(label="apellido",max_length=150, required=True)
     codigo = forms.CharField(label="codigo",max_length=11, required=True)
@@ -19,7 +26,7 @@ class usuariosForm(forms.Form):
     id_programa = forms.ModelChoiceField(label="programa", queryset= Programa.objects.all(), empty_label='Seleccione el programa') 
 
 class inicioForm(forms.Form):
-    email = forms.CharField(label="email",max_length=200, required=True)
+    email = forms.CharField(label="email",max_length=200,widget=forms.TextInput(attrs={'placeholder': 'Ejemplo:carlos@gmailcom'}), required=True)
     password =forms.CharField(label="contraseña",max_length=250, required=True,widget=forms.PasswordInput)
     
     
