@@ -20,7 +20,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ["https:localhost:3000"]
+
+ALLOWED_HOSTS = CORS_ALLOWED_ORIGINS
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -29,7 +31,7 @@ CORS_ALLOWED_ORIGINS = []
 SECRET_KEY = 'django-insecure-i&s6un34(#=qz+!3h$oo5$(cjz@(p&41ca6j-f22ac&3_iu-63'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
