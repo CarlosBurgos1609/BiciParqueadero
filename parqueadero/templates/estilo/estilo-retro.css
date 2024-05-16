@@ -826,8 +826,9 @@ h1 {
 /** footer **/
 
 .footer {
-     background: #252525;
-     padding-top: 90px;
+     
+     
+     padding-top: 30px;
      text-align: center;
      font-family: 'Roboto', sans-serif;
 }
@@ -858,14 +859,7 @@ ul.location_icon li a {
      background: #fbfdfd;
 }
 
-.copyright p {
-     color: #292929;
-     font-size: 18px;
-     line-height: 22px;
-     text-align: center;
-     padding-top: 25px;
-     font-weight: normal;
-}
+
 
 .copyright a {
      color: #292929;
@@ -874,6 +868,7 @@ ul.location_icon li a {
 .copyright a:hover {
      color: #03cafc;
 }
+
 
 
 /** end footer **/
