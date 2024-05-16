@@ -748,6 +748,32 @@ button {
      border-right: inherit;
 }
 
+input {
+     background: #03cafc;
+     font-weight: 600;
+     font-size: 18px;
+     width: 100%;
+     color: #fff;
+     height: 50px;
+     border-radius: 30px;
+     margin-top: 20px;
+     transition: ease-in all 0.5s;
+     text-transform: lowercase;
+}
+
+select{
+     background: #03cafc;
+     font-weight: 600;
+     font-size: 18px;
+     width: 100%;
+     color: #fff;
+     height: 50px;
+     border-radius: 30px;
+     margin-top: 20px;
+     transition: ease-in all 0.5s;
+     text-transform: uppercase;
+}
+
 .send_btn {
      background: #03cafc;
      font-weight: 600;
