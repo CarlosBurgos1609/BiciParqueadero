@@ -59,12 +59,13 @@ html {
   margin-left: auto;
 }
 
+
 .row {
-  display: -ms-flexbox;
+  display: -ms-fl   exbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
+  margin-right: -50px;
   margin-left: -15px;
 }
 
