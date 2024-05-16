@@ -750,18 +750,18 @@ button {
 
 input {
      background: #03cafc;
-     font-weight: 600;
-     font-size: 18px;
-     width: 100%;
+     font-weight: 400;
+     font-size: 15px;
+     width: 80%;
      color: #fff;
-     height: 50px;
+     height: 5 0px;
      border-radius: 30px;
      margin-top: 20px;
      transition: ease-in all 0.5s;
      text-transform: lowercase;
 }
 
-select{
+select {
      background: #03cafc;
      font-weight: 600;
      font-size: 18px;
@@ -771,6 +771,28 @@ select{
      border-radius: 30px;
      margin-top: 20px;
      transition: ease-in all 0.5s;
+     text-transform: uppercase;
+}
+button{
+     background: #03cafc;
+     font-weight: 600;
+     font-size: 18px;
+     width: 100%;
+     color: #fff;
+     height: 50px;
+     border-radius: 30px;
+     margin-top: 20px;
+     transition: ease-in all 0.5s;
+     text-transform: uppercase;
+}
+button:hover{
+     background: #4b4b4c;
+     transition: ease-in all 0.5s;
+}
+
+
+h1 {
+     color: #3a3737;
      text-transform: uppercase;
 }
 

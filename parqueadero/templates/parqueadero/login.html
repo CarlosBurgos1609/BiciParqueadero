@@ -1,8 +1,5 @@
-{% comment %} {% extends 'parqueadero/base.html' %} {% endcomment %}
-{% load static %}
+{% extends 'parqueadero/home.html' %} {% load static %}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
 
 <body>
   {% block content %}
@@ -12,15 +9,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Iniciar sesión</title>
-    <link rel="shortcut icon" href='{% static "img/logo1.png" %}' type="image/x-icon" />
-    <link type="text/css" rel="stylesheet" href='{% static "estilo/estilo.css" %}' />
+    <link
+      rel="shortcut icon"
+      href='{% static "img/logo1.png" %}'
+      type="image/x-icon"
+    />
+    {% comment %}
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href='{% static "estilo/estilo.css" %}'
+    />
+    {% endcomment %}
   </head>
   <center>
-    <div>
+    <div class="contact">
       <form action="loguin" method="post">
-        <h1>Iniciar sesión</h1>
-        {% csrf_token %} {{form.as_p}}
-        <button>Ingresar</button>
+        <div class="container">
+          <div class="col-md-6">
+            <h1>Iniciar sesión</h1>
+            {% csrf_token %} 
+            {% comment %} {{form.as_p}} {% endcomment %}
+            <label>Email</label><br>
+            {{form.email}}<br>
+            <label>Contraseña</label><br>
+            {{form.password}}
+            
+            <button>Ingresar</button>
+          </div>
+        </div>
       </form>
     </div>
   </center>
@@ -29,27 +46,21 @@
 <script>
   // Ejemplo de uso de SweetAlert2
   Swal.fire({
-    title: '¡Error!',
-    html: '<strong>{{ error_messages }}</strong>',
-    icon: 'error',
-    confirmButtonText: 'Aceptar'
-
+    title: "¡Error!",
+    html: "<strong>{{ error_messages }}</strong>",
+    icon: "error",
+    confirmButtonText: "Aceptar",
   });
-  const registroForm = document.getElementById('registro-form');
+  const registroForm = document.getElementById("registro-form");
 
   // Agregar un evento de envío al formulario
-  registroForm.addEventListener('submit', function (event) {
+  registroForm.addEventListener("submit", function (event) {
     // Limpiar los valores de los campos después de enviar el formulario
     registroForm.reset();
   });
 </script>
 
-{% endif %}
-
-{% endblock %}
-
-
-
+{% endif %} {% endblock %}
 
 <!-- <html lang="es">
 
