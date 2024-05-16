@@ -1,42 +1,25 @@
-{% extends 'parqueadero/menu.html' %} {%load static%}
-<head>
-  <title>Puntos</title>
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href='{% static "estilo/boostrap.css" %}'
-  />
-  <link type="text/css" rel="stylesheet" href='{% static "estilo/col.css" %}' />
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href='{% static "estilo/container.css" %}'
-  />
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href='{% static "estilo/estilo-retro.css" %}'
-  />
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href='{% static "estilo/about  .css" %}'
-  />
-</head>
-{% block content %}
 
+ {% extends 'parqueadero/menu.html' %}
+ {% load static %}
+ <html lang="es">
+ 
+ {%load static%}
+ {% block content %}   
+ 
+ 
+     <div class="about">
+       <div class="container">
+        <h1>soy estacion centro</h1>
 
-
-
-
-
-      <h1>soy estacion centro</h1>
-
-{{ estaciones }}
-      
-
-
-
-{% endblock %} 
-
-
+        <div class="estacion">
+          <button><a href="estacion-centro/a" style="color: #FFFFFF">Estacion A</a></button>
+          <button><a href="estacion-centro/b" style="color: #FFFFFF">Estacion B</a></button>
+          <button><a href="estacion-centro/c" style="color: #FFFFFF">Estacion C</a></button>
+        </div>
+       </div>
+     </div>
+ 
+     
+   {% endblock %} 
+ </html>
+ 

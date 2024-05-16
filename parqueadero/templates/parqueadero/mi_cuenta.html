@@ -17,6 +17,11 @@
       <p>Apellido: {{ usuario.apellido }}</p>
       <p>Email: {{ usuario.email }}</p>
       <p>Código: {{ usuario.código }}</p>
+
+      {% if parkine != None %}
+      <button>Contraseña {{parkine.password}}</button>
+      {% endif %}
+      
     </center>
   </body>
   {% endblock %}

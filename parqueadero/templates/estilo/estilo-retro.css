@@ -753,7 +753,7 @@ input {
      font-weight: 400;
      font-size: 15px;
      width: 80%;
-     color: #98abe7;
+     color: #FFFFFF;
      height: 5 0px;
      border-radius: 30px;
      margin-top: 20px;
@@ -884,4 +884,12 @@ ul.location_icon li a {
 .position_head .glasses,
 .shop {
      margin-bottom: 90px;
+}
+
+.estacion {
+     display: flex;
+}
+
+.estacion button {
+     margin: 12px;
 }

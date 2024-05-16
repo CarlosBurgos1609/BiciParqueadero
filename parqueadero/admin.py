@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import usuario, Sede ,Estacione, Punto, Facultade, Programa, Parkine
+from .models import Usuario, Punto, Facultade, Programa, Parkine
 
 class UserFields(admin.ModelAdmin):
-    list_display = ('nombre','apellido','código','identificación','email', 'password', 'status')
+    list_display = ('nombre','apellido','código','identificación','email', 'status')
     
 class SedeFields(admin.ModelAdmin):
     list_display = ('id_sede','nombre', 'dirección')
@@ -23,9 +23,7 @@ class ParkineFields(admin.ModelAdmin):
     list_display = ('id_parking', 'id_usurio', 'id_punto')
     
 # Register your models here.
-admin.site.register(usuario, UserFields)
-admin.site.register(Sede, SedeFields)
-admin.site.register(Estacione, EstaciónFields)
+admin.site.register(Usuario, UserFields)
 admin.site.register(Punto, PuntoFields)
 admin.site.register(Facultade, FacultadFields)
 admin.site.register(Programa, ProgramaFields)

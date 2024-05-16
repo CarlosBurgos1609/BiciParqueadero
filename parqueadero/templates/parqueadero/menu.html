@@ -70,32 +70,30 @@
                 <ul class="navbar-nav mr-auto">
                   
                   <li class="nav-item active">
-                    <a class="nav-link" href="home">Casa</a>
+                    <a class="nav-link" href="/home">Casa</a>
                   </li>
                   &nbsp &nbsp
                   <li class="nav-item">
-                    <a class="nav-link" href="headquarters">Sedes</a>
+                    <a class="nav-link" href="/headquarters">Sedes</a>
                   </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="points">Puntos</a>&nbsp &nbsp
-                    </li>
+                    
                     {% if user.is_authenticated %}
                   &nbsp &nbsp
                   <li class="nav-item">
-                    <a class="nav-link" href="my_account">Mi cuenta</a>
+                    <a class="nav-link" href="/my_account">Mi cuenta</a>
                   </li>
                   &nbsp &nbsp
 
                   <li class="nav-item d_none login_btn">
-                    <a class="nav-link" href="cerrar-sesion">Cerrar Sesión</a>
+                    <a class="nav-link" href="/cerrar-sesion">Cerrar Sesión</a>
                   </li>
                   &nbsp &nbsp {% else%}
                   <li class="nav-item d_none login_btn">
-                    <a class="nav-link" href="loguin">Iniciar Sesión</a>
+                    <a class="nav-link" href="/loguin">Iniciar Sesión</a>
                   </li>
                   &nbsp &nbsp
                   <li class="nav-item d_none login_btn">
-                    <a class="nav-link" href="register">Registrar</a>
+                    <a class="nav-link" href="/register">Registrar</a>
                   </li>
                   &nbsp &nbsp {% endif%}
                 </ul>
@@ -129,6 +127,6 @@
   </div>
 </footer> -->
 
-<br/><br /><br />&nbsp &nbsp
-{% block content %} {% endblock %}
+
+
 
