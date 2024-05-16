@@ -1,18 +1,41 @@
-{% extends 'parqueadero/menu.html' %}
-{%load static%}
+{% extends 'parqueadero/menu.html' %} {%load static%}
 <head>
-<title>Puntos</title>
-<link type = 'text/css' rel="stylesheet" href='{% static "estilo/boostrap.css" %}'>
-<link type = 'text/css' rel="stylesheet" href='{% static "estilo/col.css" %}'>
-<link type = 'text/css' rel="stylesheet" href='{% static "estilo/container.css" %}'>
-<link type = 'text/css' rel="stylesheet" href='{% static "estilo/estilo-retro.css" %}'>
-<link type = 'text/css' rel="stylesheet" href='{% static "estilo/about  .css" %}'>
+  <title>Puntos</title>
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href='{% static "estilo/boostrap.css" %}'
+  />
+  <link type="text/css" rel="stylesheet" href='{% static "estilo/col.css" %}' />
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href='{% static "estilo/container.css" %}'
+  />
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href='{% static "estilo/estilo-retro.css" %}'
+  />
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href='{% static "estilo/about  .css" %}'
+  />
 </head>
-{% block content %} 
+{% block content %}
 
-{{ estaciones }}
-      
-
-
-
-{% endblock %} 
+<table>
+  <thead>
+    <tr>
+      <th>Transacción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ estaciones }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

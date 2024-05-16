@@ -749,7 +749,7 @@ button {
 }
 
 input {
-     background: #03cafc;
+     background: #c9b98e;
      font-weight: 400;
      font-size: 15px;
      width: 80%;
@@ -762,7 +762,7 @@ input {
 }
 
 select {
-     background: #03cafc;
+     background: #043846;
      font-weight: 600;
      font-size: 18px;
      width: 100%;
@@ -774,7 +774,7 @@ select {
      text-transform: uppercase;
 }
 button{
-     background: #03cafc;
+     background: #043846;
      font-weight: 600;
      font-size: 18px;
      width: 100%;
@@ -797,7 +797,7 @@ h1 {
 }
 
 .send_btn {
-     background: #03cafc;
+     background: #043846;
      font-weight: 600;
      font-size: 18px;
      width: 100%;
